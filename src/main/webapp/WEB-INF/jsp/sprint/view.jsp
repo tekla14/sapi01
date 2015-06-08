@@ -16,7 +16,7 @@
         </div>
         <div id="story-list" class="page-content">
         <div>
-        	<a href="/sprint/add" id="add-button" class="btn btn-primary"><spring:message code="label.sprint.add.story.title"/></a>
+        	<a href="/sprint/${sprint.id}/add-story" id="add-button" class="btn btn-primary"><spring:message code="label.sprint.add.story.title"/></a>
     	</div>
         <c:choose>
             <c:when test="${empty stories}">
@@ -33,7 +33,7 @@
     	</div>
     	<div id="comment-list" class="page-content">
     	<div>
-        	<a href="/sprint/add" id="add-button" class="btn btn-primary"><spring:message code="label.sprint.add.comment.title"/></a>
+        	<a href="/sprint/${sprint.id}/add-comment" id="add-button" class="btn btn-primary"><spring:message code="label.sprint.add.comment.title"/></a>
     	</div>
         
         <c:choose>

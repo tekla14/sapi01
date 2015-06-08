@@ -84,4 +84,11 @@ public class SprintController {
         return VIEW_VIEW;
     }
 	
+	@RequestMapping(value = "/sprint/{id}/add-comment", method = RequestMethod.GET)
+	public String addCommentToSprint(@PathVariable("id") Long id, Model model) throws NotFoundException {
+		Sprint found = service.findById(id);
+		model.addAttribute(MODEL_ATTRIBUTE, found);
+		return VIEW_VIEW;
+	}
+	
 }
