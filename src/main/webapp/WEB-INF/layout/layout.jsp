@@ -42,6 +42,9 @@
                 <c:if test="${feedbackMessage != null}">
                     <div class="messageblock hidden">${feedbackMessage}</div>
                 </c:if>
+                <c:if test="${commentFeedbackMessage != null}">
+                    <div class="messageblock hidden">${commentFeedbackMessage}</div>
+                </c:if>
                 <c:if test="${errorMessage != null}">
                     <div class="errorblock hidden">${errorMessage}</div>
                 </c:if>
@@ -50,6 +53,7 @@
                 <sitemesh:write property="body"/>
             </div>
         </div>
+        
     </div>
 
     <script id="template-alert-message-error" type="text/x-handlebars-template">

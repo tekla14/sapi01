@@ -11,6 +11,7 @@
     <div>
         <a href="/sprint/add" id="add-button" class="btn btn-primary"><spring:message code="label.add.story.link"/></a>
     </div>
+    
     <div id="sprint-list" class="page-content">
         <c:choose>
             <c:when test="${empty sprints}">
@@ -19,11 +20,12 @@
             <c:otherwise>
                 <c:forEach items="${ sprints}" var="sprint">
                     <div class="well well-small">
-                        <a href="/almafa/${sprint.id}"><c:out value="${sprint.title}"/></a>
+                        <a href="/sprint/${sprint.id}"><c:out value="${sprint.title}"/></a>
                     </div>
                 </c:forEach>
             </c:otherwise>
         </c:choose>
     </div>
+    
 </body>
 </html>

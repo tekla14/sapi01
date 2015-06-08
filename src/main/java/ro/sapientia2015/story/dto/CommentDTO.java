@@ -1,36 +1,24 @@
 package ro.sapientia2015.story.dto;
 
-import java.util.List;
-
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import ro.sapientia2015.story.model.Comment;
-import ro.sapientia2015.story.model.Sprint;
-import ro.sapientia2015.story.model.Story;
 
-/**
- * @author Kiss Tibor
- */
-public class SprintDTO {
+
+public class CommentDTO {
 
     private Long id;
 
-    @Length(max = Story.MAX_LENGTH_DESCRIPTION)
+    @Length(max = Comment.MAX_LENGTH_DESCRIPTION)
     private String description;
 
-    private Sprint.Builder builder = new Sprint.Builder();
-    
     @NotEmpty
-    @Length(max = 20)
+    @Length(max = Comment.MAX_LENGTH_TITLE)
     private String title;
 
-    private List<Story> stories;
-    
-    private List<Comment> comments;
-    
-    public SprintDTO() {
+    public CommentDTO() {
 
     }
 
@@ -58,34 +46,8 @@ public class SprintDTO {
         this.title = title;
     }
 
-    
     @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
-
-	public List<Story> getStories() {
-		return stories;
-	}
-
-	public void setStories(List<Story> stories) {
-		this.stories = stories;
-	}
-
-	public List<Comment> getComments() {
-		return comments;
-	}
-
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
-	}
-
-	
-	public Sprint.Builder getBuilder() {
-		return builder;
-	}
-
-	public void setBuilder(Sprint.Builder builder) {
-		this.builder = builder;
-	}
 }

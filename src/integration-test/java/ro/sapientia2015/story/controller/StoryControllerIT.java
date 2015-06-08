@@ -55,8 +55,9 @@ import static org.springframework.test.web.server.result.MockMvcResultMatchers.v
         DirtiesContextTestExecutionListener.class,
         TransactionalTestExecutionListener.class,
         DbUnitTestExecutionListener.class })
+
 @DatabaseSetup("storyData.xml")
-public class ITStoryControllerTest {
+public class StoryControllerIT {
 
     private static final String FORM_FIELD_DESCRIPTION = "description";
     private static final String FORM_FIELD_ID = "id";
